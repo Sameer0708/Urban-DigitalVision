@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Urban DigitalVision</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2c8d6e6e8.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364, #6c5ce7, #fcb045);
+      background-size: 200% 200%;
+      animation: gradientMove 10s ease infinite;
+      color: white;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffd369;
+      text-shadow: 0 0 10px #ffd36999;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd369;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+      margin: 120px auto 40px auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ffd369;
+      margin-bottom: 10px;
+      animation: slideInDown 1s ease;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      margin-bottom: 40px;
+      animation: slideInUp 1s ease;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .card i {
+      font-size: 3rem;
+      color: #ffd369;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ffd36999;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #eee;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #6c5ce7;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #a29bfe;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideInDown {
+      0% { transform: translateY(-30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (min-width: 768px) {
+      .card-container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .card {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Urban DigitalVision</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="aboutproject.html">About Project</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1>URBAN DIGITALVISION</h1>
+    <p class="subtitle">EMPOWERING CITIES WITH BLOCKCHAIN</p>
+
+    <div class="card-container">
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>Decentralized File Storage</h3>
+        <p>Secure and immutable file storage using blockchain infrastructure, eliminating central points of failure and ensuring data trust.</p>
+        <button class="btn" onclick="navigateTo('file-storage')">Explore File Storage</button>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-landmark"></i>
+        <h3>Land Registration System</h3>
+        <p>Transparent and tamper-proof land registration records that increase public trust and reduce fraud in urban development.</p>
+        <button class="btn" onclick="navigateTo('land-registry')">Explore Land Registry</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function navigateTo(section) {
+      if (section === 'file-storage') {
+        window.location.href = "file-storage.html"; // Replace with actual URL
+      } else if (section === 'land-registry') {
+        window.location.href = "land-registry.html"; // Replace with actual URL
+      }
+    }
+  </script>
+
+</body>
+</html>
