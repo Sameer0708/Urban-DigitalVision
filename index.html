@@ -163,6 +163,7 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     .btn:hover {
@@ -235,36 +236,24 @@
         <i class="fas fa-database"></i>
         <h3>Decentralized File Storage</h3>
         <p>🌐⛓️🗄️ Secure, distributed storage on blockchain</p>
-        <button class="btn" onclick="navigateTo('file-storage')">Explore DFS</button>
+         <a href="localhost:3000" class="btn" target="_blank">Explore DFS</a>
       </div>
 
       <div class="card">
         <i class="fas fa-landmark"></i>
         <h3>Land Registration System</h3>
         <p>🏡📜🔏 Tamper-proof land records</p>
-        <button class="btn" onclick="navigateTo('land-registry')">Explore LRS</button>
+        <a href="localhost:3001" class="btn" target="_blank">Explore DFS</a>
       </div>
 
       <div class="card">
         <i class="fas fa-hand-holding-usd"></i>
-        <h3>Crowdfunding System Using Blockchain</h3>
+        <h3>Crowdfunding System</h3>
         <p>🤝💰🔗 Transparent community funding</p>
-        <button class="btn" onclick="navigateTo('crowdfunding')">Explore CSB</button>
+        <a href="localhost:3002" class="btn" target="_blank">Explore DFS</a>
       </div>
     </div>
   </div>
-  
-  <script>
-    function navigateTo(section) {
-      if (section === 'file-storage') {
-        window.location.href = "file-storage.html";
-      } else if (section === 'land-registry') {
-        window.location.href = "land-registry.html";
-      } else if (section === 'crowdfunding') {
-        window.location.href = "crowdfunding.html";
-      }
-    }
-  </script>
 
 </body>
 </html>
