@@ -29,42 +29,60 @@
     }
 
     nav {
-      width: 100%;
-      position: fixed;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      position: sticky;
       top: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
       z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
 
-    nav .logo {
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .navbar li a {
+      color: #ffd369;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+      color: #ffffff;
+    }
+
+    .navbar li a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #ffd369;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s ease;
+    }
+
+    .navbar li a:hover::after,
+    .navbar li a.active::after {
+      width: 100%;
+    }
+
+    .logo {
+      position: absolute;
+      left: 40px;
+      top: 20px;
       font-size: 1.5rem;
       font-weight: 700;
       color: #ffd369;
       text-shadow: 0 0 10px #ffd36999;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #ffd369;
     }
 
     .container {
@@ -145,6 +163,7 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     .btn:hover {
@@ -178,6 +197,20 @@
         flex: 1;
       }
     }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 60px;
+      }
+
+      .logo {
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   </style>
 </head>
 <body>
@@ -185,8 +218,8 @@
   <!-- Navbar -->
   <nav>
     <div class="logo">Urban DigitalVision</div>
-    <ul>
-      <li><a href="#">Home</a></li>
+    <ul class="navbar">
+      <li><a class="active" href="index.html">Home</a></li>
       <li><a href="aboutus.html">About Us</a></li>
       <li><a href="aboutproject.html">About Project</a></li>
       <li><a href="contactus.html">Contact Us</a></li>
@@ -202,28 +235,25 @@
       <div class="card">
         <i class="fas fa-database"></i>
         <h3>Decentralized File Storage</h3>
-        <p>Secure and immutable file storage using blockchain infrastructure, eliminating central points of failure and ensuring data trust.</p>
-        <button class="btn" onclick="navigateTo('file-storage')">Explore File Storage</button>
+        <p>🌐⛓️🗄️ Secure, distributed storage on blockchain</p>
+         <a href="localhost:3000" class="btn" target="_blank">Explore DFS</a>
       </div>
 
       <div class="card">
         <i class="fas fa-landmark"></i>
         <h3>Land Registration System</h3>
-        <p>Transparent and tamper-proof land registration records that increase public trust and reduce fraud in urban development.</p>
-        <button class="btn" onclick="navigateTo('land-registry')">Explore Land Registry</button>
+        <p>🏡📜🔏 Tamper-proof land records</p>
+        <a href="localhost:3001" class="btn" target="_blank">Explore LRS</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h3>Crowdfunding System</h3>
+        <p>🤝💰🔗 Transparent community funding</p>
+        <a href="https://drive.google.com/file/d/1DIFE1fazAYiOI6GQzw016P_FnRJZczPM/view?usp=sharing" class="btn" target="_blank">Explore CF</a>
       </div>
     </div>
   </div>
-
-  <script>
-    function navigateTo(section) {
-      if (section === 'file-storage') {
-        window.location.href = "file-storage.html"; // Replace with actual URL
-      } else if (section === 'land-registry') {
-        window.location.href = "land-registry.html"; // Replace with actual URL
-      }
-    }
-  </script>
 
 </body>
 </html>
